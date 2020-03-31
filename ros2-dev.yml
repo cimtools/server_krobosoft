@@ -8,11 +8,14 @@ services:
     volumes:
       - ./data/node:/home/node
 #    command: ros2 topic list
-     command: bash -c "
-        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-        && apt -y install nodejs
+    command: bash -c "
+        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
+        && apt -y install nodejs  
         && cd /home/node
+        && npm install express
+        && npm install rclnodejs
         && node main.js
+        && bash
       "
 #    entrypoint: /home/data/script.sh
     stdin_open: true
