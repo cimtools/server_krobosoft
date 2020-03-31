@@ -9,7 +9,8 @@ services:
       - ./data/node:/home/node
     command: bash -c "
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
-        && apt -y install nodejs  
+        && apt -y install nodejs 
+        && apt -y install nano vim
         && cd /home/node
         && npm install
         && npm run dev
