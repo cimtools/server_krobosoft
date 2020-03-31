@@ -7,9 +7,8 @@ rclnodejs.init()
     .then(() => {
         var node = rclnodejs.createNode('publisher_example_node');
 
-        const publisher = node.createPublisher('std_msgs/msg/String', 'send_message');
-
-        node.createSubscription('std_msgs/msg/String', 'chatter', msg => {
+        const rospublisher = node.createPublisher('std_msgs/msg/String', 'send_message');
+        const subscription = node.createSubscription('std_msgs/msg/String', 'chatter', msg => {
             console.log(`Received message: ${typeof msg}`, msg);
             topic_message = msg;
         });
@@ -19,16 +18,18 @@ rclnodejs.init()
         app.use(bodyParser.json());
 
         app.get('/', function (req, res) {
-        res.send('Hello World!');
+            res.send(topic_message);
         });
 
         app.post('/', function(req,res) {
             console.log(req.body.message);
-            publisher.publish(req.body.message);
+            rospublisher.publish(req.body.message);
             res.json(req.body.message);
         });
+
+        app.listen(3000);
+
         rclnodejs.spin(node);
         console.log('ros2 spin');
-        app.listen(3000);
     });
 
