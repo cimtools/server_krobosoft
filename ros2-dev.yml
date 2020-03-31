@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  ros2:
+    image: osrf/ros:eloquent-desktop
+    hostname: ros2-eloquent
+    volumes:
+      - ./data/node:/home/node
+#    command: ros2 topic list
+     command: bash -c "
+        curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        && apt -y install nodejs
+        && cd /home/node
+        && node main.js
+      "
+#    entrypoint: /home/data/script.sh
+    stdin_open: true
+    tty: true
+    ports:
+       - 3000:3000
