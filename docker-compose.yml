@@ -11,11 +11,8 @@ services:
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
         && apt -y install nodejs  
         && cd /home/node
-        && npm init -y
-        && npm install express --save
-        && npm install rclnodejs --save
-        && npm install nodemon --save
-        && node main.js
+        && npm install
+        && npm run dev
         && bash
       "
 #    entrypoint: /home/data/script.sh

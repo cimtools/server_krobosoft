@@ -1,17 +1,17 @@
 {
-  "name": "node",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.2",
-    "rclnodejs": "^0.13.0"
-  }
+    "name": "node",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "dev": "nodemon main.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.2",
+        "rclnodejs": "^0.13.0"
+    },
+    "description": ""
 }
