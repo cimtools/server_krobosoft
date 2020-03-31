@@ -2,12 +2,11 @@ version: '3'
 
 services:
 
-  ros2:
+  server:
     image: osrf/ros:eloquent-desktop
     hostname: ros2-eloquent
     volumes:
       - ./data/node:/home/node
-#    command: ros2 topic list
     command: bash -c "
         curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
         && apt -y install nodejs  
@@ -22,3 +21,9 @@ services:
     tty: true
     ports:
        - 3000:3000
+
+  talker:
+    image: osrf/ros:eloquent-desktop
+    command: ros2 run demo_nodes_cpp talker
+    depends_on:
+      - server
