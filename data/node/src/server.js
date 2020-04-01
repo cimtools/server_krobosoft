@@ -10,6 +10,7 @@ rclnodejs.init()
         const publisher = node.createPublisher('std_msgs/msg/String', 'topic');
         publisher.publish(`Hello ROS 2.0 from rclnodejs`);
 
+
         node.createSubscription('std_msgs/msg/String', 'chatter', msg => {
             console.log(`Received message: ${typeof msg}`, msg);
             topic_message = msg;
@@ -20,10 +21,16 @@ rclnodejs.init()
         console.log('ros2 spin');
     });
 
-app.get('/', function(req, res) {
+app.get('/test', function(req, res) {
     res.json(topic_message);
 });
 
+app.post('/publish', (req, res) => {
+    const value = req.jsonPARSER()
+        //publisher.publish(`Hello ROS 2.0 from rclnodejs`);
+    console.log("ok");
+    res.json({ "ok": "ok" });
+})
 
 //app.use(routes);
 app.use(express.json);
