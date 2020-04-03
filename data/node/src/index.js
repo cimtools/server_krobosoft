@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const rclnodejs = require('rclnodejs');
 const chalk = require('chalk');
 
-
 const app = express();
 const server = http.createServer(app)
 const io = socketio(server);
@@ -15,8 +14,6 @@ const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, '../public');
 let topic_message;
 app.use(express.static(publicDirectoryPath));
-
-
 
 rclnodejs.init()
     .then(() => {
@@ -29,7 +26,8 @@ rclnodejs.init()
             io.emit('message', topic_message);
             
         });
-        console.log(subscription)
+        
+        // console.log(subscription)
         io.on('connection', (socket) => {
             console.log("New connection!");
             socket.emit('message', topic_message)
@@ -40,7 +38,6 @@ rclnodejs.init()
             });
             
         });
-        
         
         app.get('/last_message', function(req, res) {
             res.send(topic_message);

@@ -2,6 +2,7 @@ const socket = io();
 
 socket.on('message', (socket) => {
     console.log('Receiv: ', socket);
+    document.getElementById('response').appendChild(document.createTextNode(socket.data + '\n'));
 })
 
 document.querySelector('#terminal').addEventListener('submit', (e) => {
