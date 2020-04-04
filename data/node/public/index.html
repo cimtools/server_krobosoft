@@ -10,9 +10,15 @@
 			<input name="commandInput" placeholder="Type a command..."></input>
 			<button>Enviar</button>
 		</form> 
-		<p id="response"></p>
+		<pre id="response" style="overflow:scroll;width:700px;height:700px;border:1px solid black;"></pre>
 	</div>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="js/terminal.js"></script>
+	<script>
+		window.setInterval(function() {
+			let scroll = document.getElementById("response")
+			scroll.scrollTop = scroll.scrollHeight;
+		}, 500);	
+	</script>
 </body>  
 </html>
