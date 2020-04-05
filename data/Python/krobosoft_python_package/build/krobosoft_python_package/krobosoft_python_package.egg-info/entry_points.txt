@@ -1,0 +1,3 @@
+[console_scripts]
+krobosoft_node = krobosoft_python_package.krobosoft_node:main
+

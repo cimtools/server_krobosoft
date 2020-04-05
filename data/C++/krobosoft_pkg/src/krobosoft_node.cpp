@@ -28,7 +28,7 @@ class MinimalEcho : public rclcpp::Node
 
     void callback(const std_msgs::msg::String::SharedPtr msg) {
         publisher_->publish(*msg);
-        std::cout << msg->data << std::endl;
+        std::cout << "C++ node message: " << msg->data << std::endl;
     }
   };
 
