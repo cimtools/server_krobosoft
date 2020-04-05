@@ -8,6 +8,7 @@ socket.on('message', (socket) => {
 document.querySelector('#terminal').addEventListener('submit', (e) => {
     e.preventDefault();
     const command = e.target.elements.commandInput.value;
+    console.log('Send: ', command);
     e.target.elements.commandInput.value = '';
     socket.emit('directCommand', command);
 });
