@@ -1,0 +1,10 @@
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/install/strip.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/install.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/list_install_components.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/krobosoft_pkg_uninstall.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/uninstall.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/krobosoft_node.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/install/local.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/test.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/edit_cache.dir
+/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles/rebuild_cache.dir
