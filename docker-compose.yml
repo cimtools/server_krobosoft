@@ -24,15 +24,15 @@ services:
 
   talker:
     image: osrf/ros:eloquent-desktop
-    command: ros2 run demo_nodes_cpp talker
-#    command: bash -c "
-#           source /opt/ros/eloquent/setup.bash
-#        && cd /home/workspace/krobosoft_pkg 
-#        && colcon build
-#        && source /home/workspace/krobosoft_pkg/install/setup.bash
-#        && ros2 run krobosoft_pkg krobosoft_node
-#        && bash
-#      "
+#    command: ros2 run demo_nodes_cpp talker
+    command: bash -c "
+           source /opt/ros/eloquent/setup.bash
+        && cd /home/workspace/krobosoft_pkg 
+        && colcon build
+        && source /home/workspace/krobosoft_pkg/install/setup.bash
+        && ros2 run krobosoft_pkg krobosoft_node
+        && bash
+      "
     stdin_open: true
     tty: true
     volumes:
