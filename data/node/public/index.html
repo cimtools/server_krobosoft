@@ -1,24 +1,35 @@
-
 <!DOCTYPE html>
 <html>
-<head>  
 
-</head>  
-<body>  
-	<div id="terminalBox">
-		<form id="terminal">
-			<input name="commandInput" placeholder="Type a command..."></input>
-			<button>Enviar</button>
-		</form> 
-		<pre id="response" style="overflow:scroll;width:700px;height:700px;border:1px solid black;"></pre>
-	</div>
-	<script src="/socket.io/socket.io.js"></script>
-	<script src="js/terminal.js"></script>
-	<script>
-		window.setInterval(function() {
-			let scroll = document.getElementById("response")
-			scroll.scrollTop = scroll.scrollHeight;
-		}, 500);	
-	</script>
-</body>  
+<head>
+
+</head>
+
+<body>
+    <select id="socket">
+		<option id="first_value" value="">Select Station</option>
+		<option value="/stt1">Station 1</option>
+		<option value="/stt2">Station 2</option>
+		<option value="/stt3">Station 3</option>
+		<option value="/stt4">Station 4</option>
+	</select>
+    <div id="terminalBox">
+        <form id="terminal">
+            <input name="commandInput" placeholder="Type a command..."></input>
+            <button>Enviar</button>
+        </form>
+        <pre id="response" style="overflow:scroll;width:700px;height:700px;border:1px solid black;"></pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/terminal.js"></script>
+    <script>
+        window.setInterval(function() {
+            let scroll = document.getElementById("response")
+            scroll.scrollTop = scroll.scrollHeight;
+        }, 500);
+    </script>
+</body>
+
 </html>
