@@ -6,15 +6,16 @@ from std_msgs.msg import String
 class MinimalSubscriber(Node):
 
     def __init__(self):
-        super().__init__('python_echo')
-        self.publisher_ = self.create_publisher(String, 'server_in', 10)
+        super().__init__('krobosoft_python_node')
+        self.publisher_ = self.create_publisher(String, 'stt2_in', 10)
         self.create_subscription(
             String,
-            'server_out', 
+            'stt2_in', 
             self.listener_callback,
             10)
 
     def listener_callback(self, msg):
+        msg.data = msg.data + " [stt2]"
         print ('Python node message: ' + msg.data)
         self.publisher_.publish(msg)
 
