@@ -10,8 +10,8 @@ function createSttIOList(node, sttList = []) {
 
     sttList.forEach((stt) => {
         console.log(stt);
-        const publisher = node.createPublisher('std_msgs/msg/String', stt + '_out');
-        const subscriber = node.createSubscription('std_msgs/msg/String', stt + '_in', (msg) => {
+        var publisher = node.createPublisher('std_msgs/msg/String', 'server_out');
+        var subscriber = node.createSubscription('std_msgs/msg/String', 'server_in', (msg) => {
             console.log(chalk.blue.bold(`Received message:`), `${typeof msg}`, msg);
             // TODO: Insert business logic to forward messages.
             if (client_list.length > 0) {
@@ -25,10 +25,8 @@ function createSttIOList(node, sttList = []) {
 
 function add_client(socket) {
     const stt = socket.adapter.nsp.name.replace('/', '');
-    console.log(stt);
-    console.log(sttIOList)
     client_list.push(socket);
-    console.log(client_list)
+    console.log(sttIOList)
     console.log("New connection! Id:", socket.id);
     // Receives message from client and send to ROS2 topic.
     socket.on('directCommand', (command) => {
