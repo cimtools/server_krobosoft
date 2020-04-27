@@ -33,8 +33,7 @@ const createSttIOList = (node) => {
         const subscriber = node.createSubscription('std_msgs/msg/String', stt + '_out', (msg) => {
             console.log(chalk.blue.bold(`Ros2Controller::createSttIOList::Received message for ${stt}:`), `${typeof msg}`, msg);
             // TODO: Insert business logic to forward messages.
-            clientList[stt].forEach(socket => socket.emit('message', msg.data))
-            console.log(msg.data)
+            sttList[stt].emit('message', msg.data)
         });
         sttIOList[stt] = { publisher, subscriber };
     });
