@@ -2,23 +2,23 @@ const chalk = require('chalk');
 
 var client_list = []
 var sttIOList = []
-
+var node_list = []
 
 // Called when ROS2 is first initiated. It setups ROS2 com.
 function createSttIOList(node, sttList = []) {
-    //node_list.push(node);
+    node_list.push(node);
 
     sttList.forEach((stt) => {
         console.log(stt);
-        var publisher = node.createPublisher('std_msgs/msg/String', 'server_out');
-        var subscriber = node.createSubscription('std_msgs/msg/String', 'server_in', (msg) => {
-            console.log(chalk.blue.bold(`Received message:`), `${typeof msg}`, msg);
+        const publisher = node.createPublisher('std_msgs/msg/String', stt + '_in');
+        const subscriber = node.createSubscription('std_msgs/msg/String', stt + '_out', (msg) => {
+            console.log(chalk.blue.bold(`Ros2Controller::createSttIOList::Received message:`), `${typeof msg}`, msg);
             // TODO: Insert business logic to forward messages.
             if (client_list.length > 0) {
                 client_list[0].emit('message', msg);
             }
         });
-        sttIOList[stt] = { publisher, subscriber };
+        sttIOList[stt] = { 'pub': publisher, 'sub': subscriber };
     });
 
 }
@@ -32,7 +32,7 @@ function add_client(socket) {
     socket.on('directCommand', (command) => {
         // TODO: Insert business logic to forward messages.
         console.log(socket.id, ': ', command);
-        sttIOList[stt].publisher.publish(command);
+        sttIOList[stt]['pub'].publish(command);
     });
 
     // Set the disconnect callback to this client.
