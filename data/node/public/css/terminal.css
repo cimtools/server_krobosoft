@@ -1,0 +1,21 @@
+body {
+    line-height: 1.4;
+    color: #333333;
+    background-color: #464646a2;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#terminalBox {
+    background-color: black;
+    color: #35b631;
+    width: 700px;
+    height: 600px;
+}
+
+#terminal input {
+    background-color: black;
+    color: #35b631;
+    border-style: none;
+    width: 580px;
+    height: 10px;
+}

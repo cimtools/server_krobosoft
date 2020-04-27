@@ -2,7 +2,7 @@
 <html>
 
 <head>
-
+    <link rel="stylesheet" href="css/terminal.css">
 </head>
 
 <body>
@@ -12,14 +12,17 @@
 		<option value="/stt2">Station 2</option>
 		<option value="/stt3">Station 3</option>
 		<option value="/stt4">Station 4</option>
-	</select>
+    </select>
+
     <div id="terminalBox">
+
+        <pre id="response"></pre>
         <form id="terminal">
-            <input name="commandInput" placeholder="Type a command..."></input>
+            >><input name="commandInput" autocomplete="off"></input>
             <button>Enviar</button>
         </form>
-        <pre id="response" style="overflow:scroll;width:700px;height:700px;border:1px solid black;"></pre>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>

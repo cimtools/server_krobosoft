@@ -47,6 +47,8 @@ const addClient = (socket) => {
     clientList[stt].push(socket);
     console.log("New connection! Id:", socket.id);
     // Receives message from client and send to ROS2 topic.
+    socket.emit('message', 'Krobosoft Web Version')
+    socket.emit('message', 'Connected to ' + stt)
     socket.on('directCommand', (command) => {
         // TODO: Insert business logic to forward messages.
         console.log(socket.id, ': ', command);
