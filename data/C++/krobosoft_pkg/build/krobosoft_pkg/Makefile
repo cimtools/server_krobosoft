@@ -194,17 +194,17 @@ uninstall/fast:
 .PHONY : uninstall/fast
 
 #=============================================================================
-# Target rules for targets named krobosoft_node
+# Target rules for targets named krobosoft_cpp_node
 
 # Build rule for target.
-krobosoft_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 krobosoft_node
-.PHONY : krobosoft_node
+krobosoft_cpp_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 krobosoft_cpp_node
+.PHONY : krobosoft_cpp_node
 
 # fast build rule for target.
-krobosoft_node/fast:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/build
-.PHONY : krobosoft_node/fast
+krobosoft_cpp_node/fast:
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/build
+.PHONY : krobosoft_cpp_node/fast
 
 src/krobosoft_node.o: src/krobosoft_node.cpp.o
 
@@ -212,7 +212,7 @@ src/krobosoft_node.o: src/krobosoft_node.cpp.o
 
 # target to build an object file
 src/krobosoft_node.cpp.o:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/src/krobosoft_node.cpp.o
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/src/krobosoft_node.cpp.o
 .PHONY : src/krobosoft_node.cpp.o
 
 src/krobosoft_node.i: src/krobosoft_node.cpp.i
@@ -221,7 +221,7 @@ src/krobosoft_node.i: src/krobosoft_node.cpp.i
 
 # target to preprocess a source file
 src/krobosoft_node.cpp.i:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/src/krobosoft_node.cpp.i
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/src/krobosoft_node.cpp.i
 .PHONY : src/krobosoft_node.cpp.i
 
 src/krobosoft_node.s: src/krobosoft_node.cpp.s
@@ -230,7 +230,7 @@ src/krobosoft_node.s: src/krobosoft_node.cpp.s
 
 # target to generate assembly for a file
 src/krobosoft_node.cpp.s:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/src/krobosoft_node.cpp.s
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/src/krobosoft_node.cpp.s
 .PHONY : src/krobosoft_node.cpp.s
 
 # Help Target
@@ -244,7 +244,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... krobosoft_pkg_uninstall"
 	@echo "... uninstall"
-	@echo "... krobosoft_node"
+	@echo "... krobosoft_cpp_node"
 	@echo "... install/local"
 	@echo "... test"
 	@echo "... edit_cache"

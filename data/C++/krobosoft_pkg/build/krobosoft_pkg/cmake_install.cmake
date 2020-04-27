@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg" TYPE EXECUTABLE FILES "/home/workspace/krobosoft_pkg/build/krobosoft_pkg/krobosoft_node")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg" TYPE EXECUTABLE FILES "/home/workspace/krobosoft_pkg/build/krobosoft_pkg/krobosoft_cpp_node")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node")
     file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node"
          OLD_RPATH "/opt/ros/eloquent/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_node")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/krobosoft_pkg/krobosoft_cpp_node")
     endif()
   endif()
 endif()

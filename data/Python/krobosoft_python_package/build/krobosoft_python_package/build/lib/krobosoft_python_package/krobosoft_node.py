@@ -7,7 +7,7 @@ class MinimalSubscriber(Node):
 
     def __init__(self):
         super().__init__('krobosoft_python_node')
-        self.publisher_ = self.create_publisher(String, 'stt2_in', 10)
+        self.publisher_ = self.create_publisher(String, 'stt2_out', 10)
         self.create_subscription(
             String,
             'stt2_in', 

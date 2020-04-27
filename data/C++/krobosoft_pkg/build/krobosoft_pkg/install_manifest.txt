@@ -1,4 +1,4 @@
-/home/workspace/krobosoft_pkg/install/krobosoft_pkg/lib/krobosoft_pkg/krobosoft_node
+/home/workspace/krobosoft_pkg/install/krobosoft_pkg/lib/krobosoft_pkg/krobosoft_cpp_node
 /home/workspace/krobosoft_pkg/install/krobosoft_pkg/share/ament_index/resource_index/package_run_dependencies/krobosoft_pkg
 /home/workspace/krobosoft_pkg/install/krobosoft_pkg/share/ament_index/resource_index/parent_prefix_path/krobosoft_pkg
 /home/workspace/krobosoft_pkg/install/krobosoft_pkg/share/krobosoft_pkg/environment/ament_prefix_path.sh

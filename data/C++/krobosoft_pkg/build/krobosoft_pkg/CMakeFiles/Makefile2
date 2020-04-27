@@ -124,39 +124,39 @@ clean: CMakeFiles/uninstall.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/krobosoft_node.dir
+# Target rules for target CMakeFiles/krobosoft_cpp_node.dir
 
 # All Build rule for target.
-CMakeFiles/krobosoft_node.dir/all:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/depend
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles --progress-num=1,2 "Built target krobosoft_node"
-.PHONY : CMakeFiles/krobosoft_node.dir/all
+CMakeFiles/krobosoft_cpp_node.dir/all:
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/depend
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles --progress-num=1,2 "Built target krobosoft_cpp_node"
+.PHONY : CMakeFiles/krobosoft_cpp_node.dir/all
 
 # Include target in all.
-all: CMakeFiles/krobosoft_node.dir/all
+all: CMakeFiles/krobosoft_cpp_node.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/krobosoft_node.dir/rule: cmake_check_build_system
+CMakeFiles/krobosoft_cpp_node.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/krobosoft_node.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/krobosoft_cpp_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/workspace/krobosoft_pkg/build/krobosoft_pkg/CMakeFiles 0
-.PHONY : CMakeFiles/krobosoft_node.dir/rule
+.PHONY : CMakeFiles/krobosoft_cpp_node.dir/rule
 
 # Convenience name for target.
-krobosoft_node: CMakeFiles/krobosoft_node.dir/rule
+krobosoft_cpp_node: CMakeFiles/krobosoft_cpp_node.dir/rule
 
-.PHONY : krobosoft_node
-
-# clean rule for target.
-CMakeFiles/krobosoft_node.dir/clean:
-	$(MAKE) -f CMakeFiles/krobosoft_node.dir/build.make CMakeFiles/krobosoft_node.dir/clean
-.PHONY : CMakeFiles/krobosoft_node.dir/clean
+.PHONY : krobosoft_cpp_node
 
 # clean rule for target.
-clean: CMakeFiles/krobosoft_node.dir/clean
+CMakeFiles/krobosoft_cpp_node.dir/clean:
+	$(MAKE) -f CMakeFiles/krobosoft_cpp_node.dir/build.make CMakeFiles/krobosoft_cpp_node.dir/clean
+.PHONY : CMakeFiles/krobosoft_cpp_node.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/krobosoft_cpp_node.dir/clean
 
 .PHONY : clean
 

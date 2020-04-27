@@ -314,5 +314,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/krobosoft_pkg_uninstall.dir/DependInfo.cmake"
   "CMakeFiles/uninstall.dir/DependInfo.cmake"
-  "CMakeFiles/krobosoft_node.dir/DependInfo.cmake"
+  "CMakeFiles/krobosoft_cpp_node.dir/DependInfo.cmake"
   )
