@@ -1,7 +1,9 @@
 # Builds and installs
+data/C++/krobosoft_pkg/build/
+data/C++/krobosoft_pkg/install/
 
-build/*
-install/*
+data/Python/krobosoft_python_package/build/
+data/Python/krobosoft_python_package/install/
 
 
 # Logs
