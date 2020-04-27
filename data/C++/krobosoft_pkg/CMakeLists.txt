@@ -19,10 +19,10 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 
-add_executable(krobosoft_node src/krobosoft_node.cpp)
-ament_target_dependencies(krobosoft_node rclcpp std_msgs)
+add_executable(krobosoft_cpp_node src/krobosoft_node.cpp)
+ament_target_dependencies(krobosoft_cpp_node rclcpp std_msgs)
 
-install(TARGETS krobosoft_node
+install(TARGETS krobosoft_cpp_node
   EXPORT export_${PROJECT_NAME}
   DESTINATION lib/${PROJECT_NAME})
 
