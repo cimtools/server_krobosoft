@@ -6,7 +6,6 @@ const selectList = document.querySelector('#socket')
 const terminal = document.querySelector('#terminal')
 selectList.addEventListener('change', (e) => {
     selectList.querySelector('#first_value').disabled = true
-    console.log(selectList.value)
     socket.disconnect();
     socket = io(selectList.value);
 })

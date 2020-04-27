@@ -5,10 +5,19 @@ const socketio = require('socket.io');
 const bodyParser = require('body-parser');
 const rclnodejs = require('rclnodejs');
 const chalk = require('chalk');
-const { add_client, add_node, remove_client } = require('./controllers/Ros2Controller')
+const { add_client, createSttIOList, remove_client } = require('./controllers/Ros2Controller')
 const app = express();
 const server = http.createServer(app)
 const io = socketio(server);
+
+var stationList = [
+    "stt1",
+    "stt2",
+    "stt3",
+    "stt4"
+]
+
+
 
 const station_1 = io.of('/stt1')
 const station_2 = io.of('/stt2')
@@ -23,7 +32,7 @@ app.use(express.static(publicDirectoryPath));
 rclnodejs.init()
     .then(() => {
         const node = rclnodejs.createNode('krobosoft_node');
-        add_node(node);
+        createSttIOList(node, stationList);
         rclnodejs.spin(node);
     })
     .then(() => {
