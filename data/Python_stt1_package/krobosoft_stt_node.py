@@ -7,11 +7,7 @@ class MinimalSubscriber(Node):
 
     def __init__(self):
         super().__init__('krobosoft_python_node')
-<<<<<<< HEAD:data/Python/krobosoft_python_package/install/krobosoft_python_package/lib/python3.6/site-packages/krobosoft_python_package/krobosoft_node.py
-        self.publisher_ = self.create_publisher(String, 'stt2_out', 10)
-=======
         self.publisher_ = self.create_publisher(String, 'stt1_out', 10)
->>>>>>> feature-dockerros2:data/Python_stt1_package/krobosoft_stt_node.py
         self.create_subscription(
             String,
             'stt1_in', 
