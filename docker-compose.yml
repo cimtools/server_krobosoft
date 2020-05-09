@@ -6,12 +6,12 @@ services:
     image: osrf/ros:eloquent-desktop
     hostname: ros2-eloquent
     volumes:
-      - ./data/node:/home/node
+      - ./data/server:/home/server
     command: bash -c "
            curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
         && apt -y install nodejs 
         && apt -y install nano vim
-        && cd /home/node
+        && cd /home/server
         && npm install
         && npm run dev
         && bash
@@ -26,16 +26,16 @@ services:
     build:
       context: ./python-ros2
     volumes:
-        - ./data/Python_stt1_package:/home/extern
+        - ./data/stations/Python_stt1_package:/home/extern
 
   sst2:
     build:
       context: ./python-ros2
     volumes:
-        - ./data/Python_stt2_package:/home/extern
+        - ./data/stations/Python_stt2_package:/home/extern
 
   sst3:
     build:
       context: ./python-ros2
     volumes:
-        - ./data/Python_stt3_package:/home/extern
+        - ./data/stations/Python_stt3_package:/home/extern

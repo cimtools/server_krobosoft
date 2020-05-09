@@ -1,7 +1,7 @@
 const path = require('path');
 const http = require('http');
 const express = require('express');
-
+const routes = require('./routes');
 const bodyParser = require('body-parser');
 const rclnodejs = require('rclnodejs');
 const chalk = require('chalk');
@@ -10,7 +10,6 @@ const app = express();
 const server = http.createServer(app)
     // const io = socketio(server);
 
-//console.log(sttList)
 
 const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -29,5 +28,8 @@ rclnodejs.init()
         rclnodejs.spin(node);
     })
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(routes);
+
+//app.use(bodyParser.urlencoded({ extended: false }));
+//app.use(bodyParser.json());
