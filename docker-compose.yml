@@ -2,6 +2,31 @@ version: '3'
 
 services:
 
+  postgres-cim:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "54581f7db524ce54f770f8b54b33e85477931746"
+    ports:
+      - "15432:5432"
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data 
+    networks:
+      - cim-network
+
+
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "${PG_ADMIN_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PG_ADMIN_PASSWD}"
+    ports:
+      - "16543:80"
+    depends_on:
+      - postgres-cim
+    networks:
+      - cim-network
+
+
   server:
     image: osrf/ros:eloquent-desktop
     hostname: ros2-eloquent
@@ -14,13 +39,16 @@ services:
         && cd /home/server
         && npm install
         && npm run dev
-        && bash
-      "
+        && bash "
     #entrypoint: /home/data/script.sh
     stdin_open: true
     tty: true
     ports:
        - 3000:3000
+    depends_on:
+      - postgres-cim
+    networks:
+      - cim-network
 
   sst1:
     build:
@@ -39,3 +67,8 @@ services:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt3_package:/home/extern
+
+
+networks: 
+  cim-network:
+    driver: bridge

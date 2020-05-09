@@ -5,6 +5,7 @@ data/C++/krobosoft_pkg/install/
 data/Python/krobosoft_python_package/build/
 data/Python/krobosoft_python_package/install/
 
+data/postgres
 
 # Logs
 logs
@@ -111,3 +112,4 @@ dist
 # TernJS port file
 .tern-port
 
+.env
