@@ -5,7 +5,7 @@ services:
   postgres-cim:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "54581f7db524ce54f770f8b54b33e85477931746"
+      POSTGRES_PASSWORD: "${PG_ADMIN_PASSWD}"
     ports:
       - "15432:5432"
     volumes:
@@ -14,7 +14,7 @@ services:
       - cim-network
 
 
-  teste-pgadmin-compose:
+  pgadmin-compose:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "${PG_ADMIN_EMAIL}"
@@ -45,29 +45,30 @@ services:
     tty: true
     ports:
        - 3000:3000
-    depends_on:
-      - postgres-cim
     networks:
-      - cim-network
+       - cim-network
 
   sst1:
     build:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt1_package:/home/extern
-
+    networks:
+        - cim-network
   sst2:
     build:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt2_package:/home/extern
-
+    networks:
+        - cim-network
   sst3:
     build:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt3_package:/home/extern
-
+    networks:
+        - cim-network
 
 networks: 
   cim-network:

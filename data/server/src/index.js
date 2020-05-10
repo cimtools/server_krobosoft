@@ -28,8 +28,8 @@ rclnodejs.init()
         rclnodejs.spin(node);
     })
 
-app.use(express.json());
+//app.use(express.json());
 app.use(routes);
 
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
