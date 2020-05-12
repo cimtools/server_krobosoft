@@ -1,3 +1,5 @@
+import serial
+
 import rclpy
 from rclpy.node import Node
 
@@ -17,7 +19,11 @@ class MinimalSubscriber(Node):
     def listener_callback(self, msg):
         msg.data = msg.data + " [stt2]"
         print ('Python node message: ' + msg.data)
-        self.publisher_.publish(msg)
+        with serial.Serial('/dev/ttyACM0', 9600, timeout=2) as ser:
+            ser.write(msg.data.encode())
+            msg.data = str(ser.readline())
+            print ("Recived msg from device: " + msg.data)
+            self.publisher_.publish(msg)
 
 def main(args=None):
     rclpy.init(args=args)

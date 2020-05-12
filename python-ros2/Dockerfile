@@ -7,8 +7,8 @@ COPY entry.bash /home/entry/
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update && \
-    apt-get install python-pip -y && \
-    pip install pyserial
+    apt-get install python3-pip -y && \
+    pip3 install pyserial
 
 RUN mkdir -p /home/ws/src && \
     cd /home/ws/src && \

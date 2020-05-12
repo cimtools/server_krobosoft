@@ -27,15 +27,21 @@ services:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt1_package:/home/extern
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
 
   sst2:
     build:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt2_package:/home/extern
+    devices:
+      - /dev/ttyACM1:/dev/ttyACM0
 
   sst3:
     build:
       context: ./python-ros2
     volumes:
         - ./data/stations/Python_stt3_package:/home/extern
+    # devices:
+    #   - /dev/ttyACM2:/dev/ttyACM0
