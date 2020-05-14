@@ -22,8 +22,8 @@ Once you started the server, acess `localhost:3000/`. The server contains a simp
 
 ## Dontpad
 
-* [Building the container](dontpad.com/LabCIM)
+* [Building the container](http://dontpad.com/LabCIM)
 
-* [Useful links](dontpad.com/LabCIM/links)
+* [Useful links](http://dontpad.com/LabCIM/links)
 
 
