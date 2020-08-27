@@ -2,6 +2,7 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const routes = require('./routes');
+const orion = require('./orion');
 const bodyParser = require('body-parser');
 const rclnodejs = require('rclnodejs');
 const chalk = require('chalk');
@@ -9,7 +10,6 @@ const { sockets, createSttIOList } = require('./sockets')
 const app = express();
 const server = http.createServer(app)
     // const io = socketio(server);
-
 
 const port = process.env.PORT || 3000;
 const publicDirectoryPath = path.join(__dirname, '../public');
