@@ -22,26 +22,49 @@ services:
     ports:
        - 3000:3000
 
-  sst1:
-    build:
-      context: ./python-ros2
-    volumes:
-        - ./data/stations/Python_stt1_package:/home/extern
-    devices:
-      - /dev/ttyACM0:/dev/ttyACM0
+  # sst1:
+  #   build:
+  #     context: ./python-ros2
+  #   volumes:
+  #       - ./data/stations/Python_stt1_package:/home/extern
+  #   devices:
+  #     - /dev/ttyACM0:/dev/ttyACM0
 
-  sst2:
-    build:
-      context: ./python-ros2
-    volumes:
-        - ./data/stations/Python_stt2_package:/home/extern
-    devices:
-      - /dev/ttyACM1:/dev/ttyACM0
+  # sst2:
+  #   build:
+  #     context: ./python-ros2
+  #   volumes:
+  #       - ./data/stations/Python_stt2_package:/home/extern
+  #   devices:
+  #     - /dev/ttyACM1:/dev/ttyACM0
 
-  sst3:
-    build:
-      context: ./python-ros2
+  # sst3:
+  #   build:
+  #     context: ./python-ros2
+  #   volumes:
+  #       - ./data/stations/Python_stt3_package:/home/extern
+  #   # devices:
+  #   #   - /dev/ttyACM2:/dev/ttyACM0
+
+  orion:
+    image: fiware/orion:${ORION_VERSION:-2.2.0}
+    ports:
+      - "1026:1026"
+    command: -logLevel DEBUG -noCache -dbhost mongo -corsOrigin __ALL -notificationMode threadpool -statCounters -statSemWait -statTiming -statNotifQueue
+    depends_on:
+      - mongo
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://0.0.0.0:1026/version"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  mongo:
+    image: mongo:3.2.19
+    ports:
+      - "27017:27017"
     volumes:
-        - ./data/stations/Python_stt3_package:/home/extern
-    # devices:
-    #   - /dev/ttyACM2:/dev/ttyACM0
+      - mongodata:/data/db
+
+volumes:
+  mongodata:
