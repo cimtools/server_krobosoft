@@ -1,0 +1,12 @@
+{  
+    "configurations": [{
+        "name": "Mac",
+        "includePath": ["${workspaceFolder}/**", "/home/giuliano/.conan/data/**", "/home/giuliano/.conan/data/boost/1.72.0/_/_/package/91ae5bfe3845753bb397c926531b17117d20c8f9/include",
+            "/home/giuliano/.conan/data/boost/1.72.0/_/_/package/91ae5bfe3845753bb397c926531b17117d20c8f9/include",
+            "/home/giuliano/.conan/data/sqlite3/3.32.3/_/_/package/01a8a96da981e1edfc87074a67d005b4b5f9950d/include",
+            "/home/giuliano/.conan/data/zlib/1.2.11/_/_/package/6af9cc7cb931c5ad942174fd7838eb655717c709/include",
+            "/home/giuliano/.conan/data/bzip2/1.0.8/_/_/package/da606cf731e334010b0bf6e85a2a6f891b9f36b0/include"
+        ]
+    }],
+    "version": 4
+}

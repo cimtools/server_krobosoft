@@ -1,0 +1,14 @@
+[requires]
+# opencv/4.3.0@conan/stable
+# fmt/7.0.1
+boost/1.72.0
+sqlite3/3.32.3
+openssl/1.1.1g
+nlohmann_json/3.9.1
+
+[generators]
+cmake
+
+[options]
+# opencv:gtk=3
+# opencv:jpeg2000=jasper

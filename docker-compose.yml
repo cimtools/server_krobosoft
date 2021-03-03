@@ -1,26 +1,36 @@
 version: '3'
 
 services:
-
-  server:
-    image: osrf/ros:eloquent-desktop
-    hostname: ros2-eloquent
-    volumes:
-      - ./data/server:/home/server
-    command: bash -c "
-           curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
-        && apt -y install nodejs 
-        && apt -y install nano vim
-        && cd /home/server
-        && npm install
-        && npm run dev
-        && bash
-      "
-    #entrypoint: /home/data/script.sh
+  cppServer:
+    build:
+      context: ./c++Server
     stdin_open: true
     tty: true
+    volumes:
+      - "./c++Server/FreezedVersion:/root/server/executable:rw"
     ports:
-       - 3000:3000
+      - "8080:8080"
+    command: ./root/server/executable
+      
+  # server:
+  #   image: osrf/ros:eloquent-desktop
+  #   hostname: ros2-eloquent
+  #   volumes:
+  #     - ./data/server:/home/server
+  #   command: bash -c "
+  #          curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -        
+  #       && apt -y install nodejs 
+  #       && apt -y install nano vim
+  #       && cd /home/server
+  #       && npm install
+  #       && npm run dev
+  #       && bash
+  #     "
+  #   #entrypoint: /home/data/script.sh
+  #   stdin_open: true
+  #   tty: true
+  #   ports:
+  #      - 3000:3000
 
   # sst1:
   #   build:

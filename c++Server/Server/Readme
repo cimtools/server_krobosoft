@@ -1,0 +1,10 @@
+Basic c++ lib download and build: https://github.com/GiulianoWF/SampleCppProject
+
+
+cd Buid
+conan install ..
+cmake ..
+cmake --build .
+cp ../bin/main ../../FreezedVersion/
+
+// !!The vscode extension may change de generated binary directory!!
