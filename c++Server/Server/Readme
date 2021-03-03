@@ -1,4 +1,6 @@
 # New services:
+===============
+
 New services must be added to the router, better not to temper with the server without reason.
 
 The new services as classes with 2 static functions, one to match the request path to the service (allowing restfull services),
@@ -6,8 +8,13 @@ and the other the call to the service.
 
 
 # Generating a server version:
-Basic c++ lib download and build: https://github.com/GiulianoWF/SampleCppProject
+==============================
 
+Extra instructions to using conan: 
+  https://conan.io/
+  https://github.com/GiulianoWF/SampleCppProject
+
+in the folder /c++Server/Server/
 
 cd Buid
 conan install ..
@@ -15,4 +22,4 @@ cmake ..
 cmake --build .
 cp ../bin/main ../../FreezedVersion/
 
-// !!The vscode extension may change de generated binary directory!!
+!!The vscode cmake extension may change the generated binary directory!!
